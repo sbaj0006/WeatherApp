@@ -14,4 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/api", require("./routes/index"));
+
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("/build"));
+// }
 app.listen(port);
