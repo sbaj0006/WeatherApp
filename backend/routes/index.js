@@ -16,6 +16,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const user = new User({
+    date: req.body.date,
     city: req.body.city,
     country: req.body.country,
   });

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Titles from "./components/Titles";
-import Form from "./components/Form";
+// import Form from "./components/Form";
 import Weather from "./components/Weather";
 import axios from "axios";
 
@@ -16,6 +16,7 @@ class App extends Component {
     error: undefined,
     users: [],
     id: 0,
+    date: undefined,
   };
 
   getWeather = async (e, id) => {
@@ -38,6 +39,8 @@ class App extends Component {
         error: "",
       });
       axios.post("http://localhost/api", {
+        date: new Date(Date.now()).toISOString(),
+        //date: new Date(parseInt(id.toString().substring(0, 8), 16) * 1000),
         city: this.state.city,
         country: this.state.country,
       });
